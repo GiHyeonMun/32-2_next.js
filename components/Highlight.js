@@ -32,7 +32,7 @@ import Head from 'next/head';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
 
-function Highlight(props) {
+export default function Highlight(props) {
   const { asPath } = useRouter();
 
   useEffect(() => {
@@ -51,5 +51,3 @@ function Highlight(props) {
     </>
   );
 }
-
-export default Highlight;
