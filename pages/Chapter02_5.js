@@ -6,8 +6,11 @@ import styles from '../styles/Home.module.css';
 
 export default function DynamicPage() {
   return (
-    <div className={styles.main}>
-      <Highlight code={`console.log('Hello, world!')`} language="js" />
-    </div>
+    <>
+      <div className={styles.main}>
+        asdf
+        <Highlight code={`console.log('Hello, world!')`} language="js" />
+      </div>
+    </>
   );
 }

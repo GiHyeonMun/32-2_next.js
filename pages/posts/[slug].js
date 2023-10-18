@@ -7,5 +7,8 @@ const Post = () => {
     const router = useRouter()
     // {"pid": "foo"}, {"pid": "bar"}
     const { pid } = router.query
+    
     return <p>Post: {pid}</p>
 }
+
+export default Post
