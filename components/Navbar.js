@@ -1,8 +1,12 @@
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import { useContext } from 'react'
+import ThemeContext from './themeContext';
 
 export default function Navbar() {
+    const { toggleTheme, theme } = useContext(ThemeContext);
+    const newThemeName = theme === 'dark' ? 'light' : 'dark'
+
     return (
         /*
         <div className={styles.navbar}>
@@ -14,9 +18,13 @@ export default function Navbar() {
             <a href="./Chapter02_6">CH02_6</a> |
         </div>*/
         <div>
+            <div>My Website</div>
             <Link href='/'>| Home</Link> |
             <Link href='/about'> About</Link> |
             <Link href='/contact'> Contact</Link> |
+            <button onClick={toggleTheme}>
+                Set {newThemeName} theme
+            </button> |
             <Link href={{
                 pathname: '[date]/[contents]',
                 query: {
@@ -26,7 +34,7 @@ export default function Navbar() {
                     woo: 'gie',
                     foobar: 'true',
                 },
-            }}> | Read Post#4 </Link>
+            }}> Read Post#4 | </Link>
         </div>
     );
 }
